@@ -15,7 +15,7 @@ License: For each use you must have a valid license purchased only from above li
   <head>
     <base href="../" />
     <title>
-    Giling | Grafik PI
+    Giling | Grafik HPB
     </title>
     <meta charset="utf-8" />
     <meta
@@ -284,7 +284,7 @@ License: For each use you must have a valid license purchased only from above li
 
                 <div class="menu-item">
                 <!--begin:Menu link-->
-                <a class="menu-link" href="../apps/kebonagung/dashboard.html">
+                <a class="menu-link" href="dashboard.html">
                   <span class="menu-icon">
                     <i class="ki-duotone ki-home-2 text-primary fs-2">
                       <span class="path1"></span>
@@ -304,7 +304,7 @@ License: For each use you must have a valid license purchased only from above li
 
                 <div class="menu-item">
                 <!--begin:Menu link-->
-                <a class="menu-link" href="../apps/kebonagung/dataumum.html">
+                <a class="menu-link" href="dataumum.html">
                   <span class="menu-icon">
                     <i class="ki-duotone ki-rescue text-primary fs-2">
                       <span class="path1"></span>
@@ -342,7 +342,7 @@ License: For each use you must have a valid license purchased only from above li
                       <!--begin:Menu link-->
                       <a
                         class="menu-link"
-                        href="../apps/kebonagung/datahpb.html"
+                        href="datahpb.html"
                       >
                         <span class="menu-bullet">
                           <span class="bullet bullet-dot"></span>
@@ -355,7 +355,7 @@ License: For each use you must have a valid license purchased only from above li
                       <!--begin:Menu link-->
                       <a
                         class="menu-link"
-                        href="../apps/kebonagung/grafikhpb.html"
+                        href="grafikhpb.html"
                       >
                         <span class="menu-bullet">
                           <span class="bullet bullet-dot"></span>
@@ -392,7 +392,7 @@ License: For each use you must have a valid license purchased only from above li
                       <!--begin:Menu link-->
                       <a
                         class="menu-link"
-                        href="/demo8/apps/kebonagung/datapi.html"
+                        href="datapi.html"
                       >
                         <span class="menu-bullet">
                           <span class="bullet bullet-dot"></span>
@@ -405,7 +405,7 @@ License: For each use you must have a valid license purchased only from above li
                       <!--begin:Menu link-->
                       <a
                         class="menu-link"
-                        href="/demo8/apps/kebonagung/grafikpi.html"
+                        href="grafikpi.html"
                       >
                         <span class="menu-bullet">
                           <span class="bullet bullet-dot"></span>
@@ -443,7 +443,7 @@ License: For each use you must have a valid license purchased only from above li
                       <!--begin:Menu link-->
                       <a
                         class="menu-link"
-                        href="/demo8/apps/kebonagung/datajhg.html"
+                        href="datajhg.html"
                       >
                         <span class="menu-bullet">
                           <span class="bullet bullet-dot"></span>
@@ -456,7 +456,7 @@ License: For each use you must have a valid license purchased only from above li
                       <!--begin:Menu link-->
                       <a
                         class="menu-link"
-                        href="/demo8/apps/kebonagung/grafikjhg.html"
+                        href="grafikjhg.html"
                       >
                         <span class="menu-bullet">
                           <span class="bullet bullet-dot"></span>
@@ -543,14 +543,14 @@ License: For each use you must have a valid license purchased only from above li
                   <h1
                     class="d-flex flex-column text-gray-900 fw-bold fs-3 mb-0"
                   >
-                  PI (Preparation Index)
+                  HPB (Real-Time)
                   </h1>
                   <ul
                     class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 pt-1"
                   >
                     <li class="breadcrumb-item text-muted">
                       <a class="text-muted text-hover-primary"
-                        > PI (Preparation Index)</a
+                        >HPB (Real-Time)</a
                       >
                     </li>
                     <li class="breadcrumb-item">
@@ -674,7 +674,7 @@ License: For each use you must have a valid license purchased only from above li
               <div id="kt_content_container" class="container-xxl">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Grafik PI (Preparation Index)</h4>
+                        <h4 class="card-title">Grafik HPB</h4>
                     </div>
                     <div class="card-body">
                         <canvas id="hpbChart" width="400" height="170"></canvas>
@@ -803,15 +803,22 @@ License: For each use you must have a valid license purchased only from above li
           data: {
             labels: dates,
             datasets: [{
-              label: 'Data Historis',
+              label: 'HPB',
               data: hpbData,
               fill: false,
               borderColor: 'rgba(54, 162, 235, 1)',
               tension: 0.1,
               pointBackgroundColor: 'rgba(54, 162, 235, 1)',
-            },
-             {
+            }, {
               label: 'Target',
+              data: targetData,
+              fill: false,
+              borderColor: 'rgba(255, 99, 132, 1)',
+              borderDash: [10, 5],
+              tension: 0.1,
+              pointRadius: 0,
+            }, {
+              label: 'Linear (HPB)',
               data: linearTrend(hpbData),
               fill: false,
               borderColor: 'rgba(75, 192, 192, 1)',
